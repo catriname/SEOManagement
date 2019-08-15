@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Manage Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form id="role-form" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label>Users</label>
+                <select name="User" class="form-control" id="Users" asp-items="@ViewBag.Users" required><option value="0">Select One...</option></select>
+            </div>
+            <div class="form-group">
+                <label>Roles</label>
+                <select name="Role" class="form-control" id="Roles" asp-items="@ViewBag.Roles" required><option value="0">Select One...</option></select>
+            </div>
+            <button type="submit" class="btn btn-primary">Assign Role</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@model SEOManagement.Models.SEOMetaData
+
+@{
+    ViewData["Title"] = "Set Default";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Set Default</h2>
+
+<hr />
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-danger">@TempData["msg"]</div>
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Default">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Path" class="control-label"></label>
+                <input asp-for="Path" class="form-control" value="." readonly />
+                <span asp-validation-for="Path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" required />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="H1" class="control-label"></label>
+                <input asp-for="H1" class="form-control" required />
+                <span asp-validation-for="H1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea class="form-control" asp-for="Description" required></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Set Default" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
